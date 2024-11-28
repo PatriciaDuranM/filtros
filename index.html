@@ -3,10 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Filter dessert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="filter filter-name">
+        <label class="title" for="name-product">Name</label>
+        <input id="name-product" type="text" />
+      </div>
+      <div class="filter filter-sugar">
+        <label class="title" for="checkbox">SugarLESS</label>
+        <input id="checkbox" type="checkbox" />
+      </div>
+      <select class="selection title" id="selection-filter">
+        <option value="default">Default</option>
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+    </header>
+    <main class="main">
+      <div id="products" class="products products-container"></div>
+    </main>
     <script src="js/scripts.js"></script>
   </body>
 </html>
