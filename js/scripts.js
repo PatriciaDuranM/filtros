@@ -143,3 +143,30 @@ const selectSugarLess = () => {
 };
 
 checkboxElement.addEventListener("change", selectSugarLess);
+
+/*buscar
+
+searchName =()=>{
+    if(
+
+    )
+}
+
+
+searchElement.addEventListener('change', searchName);
+*/
+
+/*desplegable*/
+const select = () => {
+  const newArray = [...productData];
+
+  if ((selectionElement.value = "name")) {
+    newArray.sort((a, b) => a.name.localeCompare(b.name));
+  } else if ((selectionElement.value = "price")) {
+    newArray.sort((a, b) => a.price - b.price);
+  }
+
+  printProductTemplate(newArray);
+};
+
+selectionElement.addEventListener("change", select);
