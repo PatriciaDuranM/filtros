@@ -89,7 +89,7 @@ const productData = [
 </div>*/
 
 const printProductTemplate = (products) => {
-  productsElement.innerHTML = "";
+  productsElement.textContent = "";
 
   const fragment = document.createDocumentFragment();
 
