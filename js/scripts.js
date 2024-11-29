@@ -1,7 +1,8 @@
 const productsElement = document.getElementById("products");
-const searchElement = document.getElementById("name-product");
+const searchElement = document.getElementById("search");
 const checkboxElement = document.getElementById("checkbox");
 const selectionElement = document.getElementById("selection-filter");
+const noProductsElement = document.getElementById("noproducts");
 
 const productData = [
   {
@@ -144,25 +145,28 @@ const selectSugarLess = () => {
 
 checkboxElement.addEventListener("change", selectSugarLess);
 
-/*buscar
+/*buscar*/
 
-searchName =()=>{
-    if(
+const searchName = () => {
+  const nameProducts = productData.filter((product) =>
+    product.name.toLowerCase().includes(searchElement.value.toLowerCase())
+  );
+  printProductTemplate(nameProducts);
 
-    )
-}
+  if (nameProducts.length === 0) {
+    noProductsElement.classList.remove("hide");
+  }
+};
 
-
-searchElement.addEventListener('change', searchName);
-*/
+searchElement.addEventListener("input", searchName);
 
 /*desplegable*/
 const select = () => {
   const newArray = [...productData];
 
-  if ((selectionElement.value = "name")) {
+  if (selectionElement.value === "name") {
     newArray.sort((a, b) => a.name.localeCompare(b.name));
-  } else if ((selectionElement.value = "price")) {
+  } else if (selectionElement.value === "price") {
     newArray.sort((a, b) => a.price - b.price);
   }
 
